@@ -200,14 +200,19 @@
                   <ion-toggle color="danger" v-model="check"></ion-toggle>
                 </ion-list-header>
               </ion-list>
+                        <ion-item color="tertiary" lines="none" class="ion-no-padding" style="margin: 0px 10px 10px 10px; ">
+            <ion-chip mode="md" class="chip-large" style="margin-right: 1.5rem;" :disabled="!check" color="primary">
+              <ion-label color="primary" style="font-size: 1.2rem">อนุญาต</ion-label>
+            </ion-chip>
+            <ion-chip mode="md" class="chip-large" outline color="primary">
+              <ion-label color="primary" style="font-size: 1.2rem">ปฎิเสธ</ion-label>
+            </ion-chip>
+          </ion-item>
             </ion-card>
           </div>
         </ion-card>
       </ion-card-content>
     </ion-content>
-        <ion-footer class="ion-no-border">
-      <ion-button color="danger" class="ion-no-margin" expand="full" type="submit" :disabled="!check">อนุญาต</ion-button>
-    </ion-footer>
   </ion-page>
 </template>
 
@@ -229,8 +234,6 @@ import {
   IonGrid,
   IonTitle,
   IonCheckbox,
-  IonFooter,
-  IonButton,
   IonToggle,
   IonList,
   IonListHeader,
@@ -257,8 +260,6 @@ export default defineComponent({
     IonGrid,
     IonTitle,
     IonCheckbox,
-    IonFooter,
-    IonButton,
     IonToggle,
     IonList,
     IonListHeader,

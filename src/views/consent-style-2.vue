@@ -196,8 +196,11 @@
             <ion-text>ฉันอ่านและยอมรับข้อตกลงแล้ว</ion-text>
           </ion-item>
           <ion-item color="tertiary" lines="none" class="ion-no-padding" style="margin: 0px 10px 10px 10px; ">
-            <ion-chip mode="md" class="chip-large ion-no-margin" color="primary" :disabled="!check">
-              <ion-label color="primary" style="font-size: 1.2rem; text-align: center;">อนุญาต</ion-label>
+            <ion-chip mode="md" class="chip-large" style="margin-right: 1.5rem;" :disabled="!check" color="primary">
+              <ion-label color="primary" style="font-size: 1.2rem">อนุญาต</ion-label>
+            </ion-chip>
+            <ion-chip mode="md" class="chip-large" outline color="primary">
+              <ion-label color="primary" style="font-size: 1.2rem">ปฎิเสธ</ion-label>
             </ion-chip>
           </ion-item>
         </ion-card>
@@ -291,7 +294,7 @@ export default defineComponent({
 
 .chip-large {
   height: 10px;
-  width: 100%;
+  width: 45%;
   padding: 20px;
   border-radius: 25px;
   justify-content: center;

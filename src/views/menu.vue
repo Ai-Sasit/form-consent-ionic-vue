@@ -18,7 +18,7 @@
           <ion-label>Style 3</ion-label>
         </ion-item>
         <ion-item lines="full" button @click="() => router.push('/consent-3')">
-          <ion-label>Style 4</ion-label>
+          <ion-label style="text-decoration: line-through;">Style 4</ion-label>
         </ion-item>
         <ion-item lines="full" button @click="() => router.push('/consent-4')">
           <ion-label>Style 5</ion-label>
