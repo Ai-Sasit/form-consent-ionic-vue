@@ -161,7 +161,7 @@
           </ion-item>
           <ion-item color="tertiary" lines="none" button routerLink="/form-input-address-by-current">
             <ion-label>
-              <ion-icon name="checkmark-circle-outline"></ion-icon>
+              <ion-icon name="checkmark-circle-outline" style="color: cornflowerblue"></ion-icon>
               <b>&nbsp;ข้อมูลทั่วไป&nbsp;</b>
               <ion-text color="danger">*</ion-text>
               <ion-text color="medium" style="font-size: 14px">
@@ -186,44 +186,26 @@
             <ion-checkbox style="--size:1rem" mode="ios" color="warning" slot="start"></ion-checkbox>
             <ion-text>อนุญาตให้เข้าถึงข้อมูลที่จำเป็นสำหรับการให้บริการแก่คุณ</ion-text>
           </ion-item>
-          <br>
+          <ion-text >
+            <ion-label style="padding: 0px 10px 0px 10px;">
+              <h2 style="margin-left: 1rem;"><b>ยอมรับข้อตกลง</b></h2>
+            </ion-label>
+          </ion-text>
+          <ion-item color="tertiary" lines="none" style="font-size: 14px; margin-top: -1rem;">
+            <ion-checkbox style="--size:1rem" mode="ios" color="warning" v-model="check" slot="start"></ion-checkbox>
+            <ion-text>ฉันอ่านและยอมรับข้อตกลงแล้ว</ion-text>
+          </ion-item>
+          <ion-item color="tertiary" lines="none" class="ion-no-padding" style="margin: 0px 10px 10px 10px; ">
+            <ion-chip mode="md" class="chip-large ion-no-margin" color="primary" :disabled="!check">
+              <ion-label color="primary" style="font-size: 1.2rem; text-align: center;">อนุญาต</ion-label>
+            </ion-chip>
+          </ion-item>
         </ion-card>
       </ion-card>
 
-      <ion-card-content>
-        <ion-card>
-          <div class="ion-no-margin">
-            <ion-card color="tertiary" class="ion-no-padding border-radius">
-              <ion-list class="ion-margin-bottom" lines="none">
-                <ion-list-header mode="md" color="tertiary">
-                  <ion-label>
-                    <h3>ยอมรับข้อตกลง</h3>
-                  </ion-label>
-                </ion-list-header>
-                <ion-radio-group mode="md">
-                  <ion-item color="tertiary">
-                    <ion-label>
-                      <h3><b>อนุญาต</b></h3>
-                    </ion-label>
-                    <ion-radio slot="start" value="true"></ion-radio>
-                  </ion-item>
-                  <ion-item color="tertiary">
-                    <ion-label>
-                      <h3><b>ปฏิเสธ</b></h3>
-                    </ion-label>
-                    <ion-radio slot="start" value="false"></ion-radio>
-                  </ion-item>
-                </ion-radio-group>
-              </ion-list>
-            </ion-card>
-          </div>
-        </ion-card>
-      </ion-card-content>
+
 
     </ion-content>
-    <ion-footer class="ion-no-border">
-      <ion-button color="danger" class="ion-no-margin" expand="full" type="submit">ยืนยัน</ion-button>
-    </ion-footer>
   </ion-page>
 </template>
 
@@ -232,12 +214,7 @@ import {
   IonPage,
   IonContent,
   IonCard,
-  IonCardContent,
-  IonList,
-  IonListHeader,
   IonItem,
-  IonRadio,
-  IonRadioGroup,
   IonLabel,
   IonText,
   IonHeader,
@@ -245,21 +222,22 @@ import {
   IonBackButton,
   IonButtons,
   IonIcon,
+  IonChip,
+  IonRow,
+  IonCol,
+  IonGrid,
+  IonTitle,
+  IonCheckbox
 } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'HomePage',
+  name: 'consentStyle0',
   components: {
     IonPage,
     IonContent,
     IonCard,
-    IonCardContent,
-    IonList,
-    IonListHeader,
     IonItem,
-    IonRadio,
-    IonRadioGroup,
     IonLabel,
     IonText,
     IonHeader,
@@ -267,6 +245,17 @@ export default defineComponent({
     IonBackButton,
     IonButtons,
     IonIcon,
+    IonChip,
+    IonRow,
+    IonCol,
+    IonGrid,
+    IonTitle,
+    IonCheckbox
+  },
+  data(){
+    return {
+        check: false,
+    }
   }
 });
 </script>
@@ -298,5 +287,13 @@ export default defineComponent({
 
 #container a {
   text-decoration: none;
+}
+
+.chip-large {
+  height: 10px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 25px;
+  justify-content: center;
 }
 </style>
